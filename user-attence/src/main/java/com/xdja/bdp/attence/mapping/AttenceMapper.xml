@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xdja.bdp.attence.dao.AttenceMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xdja.bdp.attence.domain.Attence">
+        <id column="c_id" property="id" />
+        <result column="n_check_in_time" property="checkInTime" />
+        <result column="c_account_id" property="accountId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        c_id, n_check_in_time, c_account_id
+    </sql>
+
+</mapper>

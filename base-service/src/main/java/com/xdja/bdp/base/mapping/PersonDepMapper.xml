@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xdja.bdp.base.dao.PersonDepMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xdja.bdp.base.domain.PersonDep">
+        <id column="c_id" property="id" />
+        <result column="c_code" property="code" />
+        <result column="c_person_id" property="personId" />
+        <result column="c_org_id" property="orgId" />
+        <result column="c_position" property="position" />
+        <result column="n_order_field" property="orderField" />
+        <result column="c_office_email" property="officeEmail" />
+        <result column="c_office_phone" property="officePhone" />
+        <result column="n_last_update_time" property="lastUpdateTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        c_id, c_code, c_person_id, c_org_id, c_position, n_order_field, c_office_email, c_office_phone, n_last_update_time
+    </sql>
+
+</mapper>

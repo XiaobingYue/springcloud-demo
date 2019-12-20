@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xdja.bdp.base.dao.OrgMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xdja.bdp.base.domain.Org">
+        <id column="c_id" property="id" />
+        <result column="c_name" property="name" />
+        <result column="c_code" property="code" />
+        <result column="c_parent_id" property="parentId" />
+        <result column="c_tree_id" property="treeId" />
+        <result column="c_tree_code" property="treeCode" />
+        <result column="n_last_update_time" property="lastUpdateTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        c_id, c_name, c_code, c_parent_id, c_tree_id, c_tree_code, n_last_update_time
+    </sql>
+
+</mapper>
