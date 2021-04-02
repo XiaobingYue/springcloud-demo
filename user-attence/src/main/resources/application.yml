@@ -1,0 +1,41 @@
+server:
+  port: 3001
+spring:
+  application:
+    name: user-attence
+  cloud:
+    zookeeper:
+      connect-string: 192.168.33.10:2181
+      discovery:
+        register: true
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.36.34:3306/base_info?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 122733
+  freemarker:
+    request-context-attribute: req
+    suffix: .html
+    content-type: text/html
+    enabled: true
+    cache: false
+    charset: UTF-8
+
+base-service:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
+    ConnectTimeout: 500
+    ReadTimeout: 1000
+    OkToRetryOnAllOperations: true
+    MaxAutoRetriesNextServer: 2
+    MaxAutoRetries: 1
+
+logging:
+  level:
+    com:
+      xdja: debug
+
+
+mybatis-plus:
+  type-aliases-package: com.xdja.bdp.attence.domain
+  mapper-locations: classpath:com/xdja/bdp/attence/mapping/*.xml

@@ -18,6 +18,7 @@
         <module>base-service</module>
         <module>user-attence</module>
         <module>bdp-registry</module>
+        <module>config-center</module>
     </modules>
 
     <properties>

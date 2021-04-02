@@ -1,4 +1,4 @@
-bdp.iml
+*.iml
 /.idea
 */.mvn
 */target

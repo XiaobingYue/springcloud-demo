@@ -1,5 +1,18 @@
-spring.application.name=base-service
-server.port=2003
+spring:
+  application:
+    name: base-service
+  cloud:
+    config:
+      label: master
+      profile: dev
+      uri: http://localhost:8888
+    zookeeper:
+      connect-string: 192.168.33.10:2181
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.36.34:3306/base_info?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 122733
 #eureka.instance.hostname=192.168.137.1
 #
 ## 默认情况下，Eureka 使用 hostname 进行服务注册，以及服务信息的显示，如需改为ip则配置为true
@@ -15,15 +28,14 @@ server.port=2003
 #eureka.client.fetch-registry=true
 ## 注册中心地址，多个逗号隔开
 #eureka.client.serviceUrl.defaultZone=http://192.168.137.1:1001/eureka/
+server:
+  port: 2003
+logging:
+  level:
+    com:
+      xdja: debug
 
-spring.cloud.zookeeper.connect-string=192.168.33.10:2181
+mybatis-plus:
+  mapper-locations: classpath:com/xdja/bdp/base/mapping/*.xml
+  type-aliases-package: com.xdja.bdp.base.domain
 
-spring.datasource.driver-class-name=com.mysql.jdbc.Driver
-spring.datasource.url=jdbc:mysql://192.168.36.34:3306/base_info?useUnicode=true&characterEncoding=UTF-8
-spring.datasource.username=root
-spring.datasource.password=122733
-
-logging.level.com.xdja=debug
-
-mybatis-plus.mapper-locations=classpath:com/xdja/bdp/base/mapping/*.xml
-mybatis-plus.type-aliases-package=com.xdja.bdp.base.domain

@@ -10,6 +10,8 @@ import com.xdja.bdp.base.service.IOrgService;
 import com.xdja.bdp.base.service.IPersonDepService;
 import com.xdja.bdp.common.bean.Result;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,12 +26,20 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/org")
+@RefreshScope
 public class OrgController {
 
     @Autowired
     private IOrgService orgService;
     @Autowired
     private IPersonDepService personDepService;
+
+    @Value("${base-service.username}")
+    private String username;
+
+    @Value("${base-service.password}")
+    private String password;
+
 
     @PostMapping("/add")
     public Result add(@RequestBody Org org) {
@@ -56,6 +66,12 @@ public class OrgController {
             }
         }
         return Result.successResult();
+    }
+
+
+    @GetMapping("/getConfig")
+    public Result getConfig() {
+        return Result.successResult(username + password);
     }
 }
 
