@@ -4,9 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 
 @EnableFeignClients
 @EnableDiscoveryClient
+@EnableHystrix
 @SpringBootApplication(scanBasePackages = "com.xdja")
 public class AttenceApplication {
 

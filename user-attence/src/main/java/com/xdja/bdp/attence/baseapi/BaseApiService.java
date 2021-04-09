@@ -6,6 +6,7 @@ import com.xdja.bdp.attence.bean.PersonDep;
 import com.xdja.bdp.attence.bean.PersonDepBean;
 import com.xdja.bdp.common.bean.Result;
 import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.cloud.netflix.feign.FeignClientsConfiguration;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,7 +19,9 @@ import java.util.Set;
  * @author yxb
  * @since 2019/12/17
  */
-@FeignClient("base-service")
+@FeignClient(value = "base-service",
+        configuration = FeignClientsConfiguration.class,
+        fallback = BaseApiServiceFallBack.class)
 public interface BaseApiService {
 
     @GetMapping("/person/list")

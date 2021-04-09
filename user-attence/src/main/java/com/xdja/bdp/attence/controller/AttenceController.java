@@ -12,9 +12,11 @@ import com.xdja.bdp.attence.service.IAttenceService;
 import com.xdja.bdp.common.bean.Result;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -35,7 +37,7 @@ public class AttenceController {
 
     @Autowired
     private IAttenceService attenceService;
-    @Autowired
+    @Resource
     private BaseApiService baseApiService;
 
 

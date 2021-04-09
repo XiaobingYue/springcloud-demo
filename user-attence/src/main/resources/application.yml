@@ -21,6 +21,10 @@ spring:
     cache: false
     charset: UTF-8
 
+feign:
+  hystrix:
+    enabled: true
+
 base-service:
   ribbon:
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
